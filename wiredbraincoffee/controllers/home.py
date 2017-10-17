@@ -26,7 +26,7 @@ class HomeController:
                                          city=store['city'],
                                          state=store['state']),
                      Stores)
-        number_of_offers = len(list(products_with_discount))
+        number_of_offers = len(products_with_discount)
         if number_of_offers == 1:
             offer_message = "We have only 1 offer this month"
         else:

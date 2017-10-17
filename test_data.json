@@ -29,9 +29,9 @@
             "label": "Coffee Beans"
         },
         "2": {
-            "discount": 10,
+            "discount": 0,
             "price": 2.99,
-            "label": "Coffee Ground ☕️"
+            "label": "Coffee Ground"
         }
     }
 }

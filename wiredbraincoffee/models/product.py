@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 PRODUCT_IMAGES = {
     'Beans': '/static/img/beans.jpg',
     'Ground': '/static/img/grounds.jpg'
@@ -35,13 +32,12 @@ class Product:
         Get an image for the product, we mostly sell beans and ground coffee,
         so just use generic images for those
         '''
-        for category, image in PRODUCT_IMAGES.items():
+        for category, image in PRODUCT_IMAGES.iteritems():
             if category in self.label:
                 return image
         return '/static/img/product.jpg'
 
-    @property
-    def text(self):
+    def __str__(self):
         # If the product has a discount, show original price
         if self.discount > 0:
             return "{0} - {1}% off. Was ${2}, now ${3}!".format(
