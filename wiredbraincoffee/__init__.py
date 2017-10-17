@@ -1,6 +1,11 @@
-from flask import Flask
+try:
+    from flask import Flask
 
-app = Flask(__name__)
+    app = Flask(__name__)
+except ImportError:
+    import warnings
+    warnings.warn("Cannot import Flask")
+    app = None
 
 import wiredbraincoffee.views  # NOQA
 

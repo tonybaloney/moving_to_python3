@@ -26,12 +26,12 @@
         "1": {
             "discount": 5,
             "price": 1.99,
-            "label": "Arabica Single Origin Beans ☕️"
+            "label": "Coffee Beans"
         },
         "2": {
-            "discount": 0,
+            "discount": 10,
             "price": 2.99,
-            "label": "Arabica Single Origin Ground"
+            "label": "Coffee Ground ☕️"
         }
     }
 }

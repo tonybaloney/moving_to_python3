@@ -1,5 +1,6 @@
 from tinydb import TinyDB, Query
 
+from wiredbraincoffee.config import DB_LOCATION
 from wiredbraincoffee.models import Product, Store
 
 
@@ -8,7 +9,7 @@ class HomeController:
         pass
 
     def view(self, context):
-        db = TinyDB('db.json')
+        db = TinyDB(DB_LOCATION)
         Products = db.table('products')
         Stores = db.table('stores')
 
@@ -17,15 +18,15 @@ class HomeController:
         # Get the offers as classes
         for offer in products_with_discount:
             # Apply discount to price
-            o = Product(offer['label'], offer['price'], offer['discount'])
+            o = Product(offer.doc_id, offer['label'], offer['price'], offer['discount'])
             offers.append(o)
 
         # Convert the stores to store models
-        stores = map(lambda store: Store(name=store['name'], 
-                                         city=store['city'], 
-                                         state=store['state']), 
+        stores = map(lambda store: Store(name=store['name'],
+                                         city=store['city'],
+                                         state=store['state']),
                      Stores)
-        number_of_offers = len(products_with_discount)
+        number_of_offers = len(list(products_with_discount))
         if number_of_offers == 1:
             offer_message = "We have only 1 offer this month"
         else:
