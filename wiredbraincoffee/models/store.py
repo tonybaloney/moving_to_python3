@@ -13,3 +13,9 @@ class Store:
             self.name,
             self.city,
             self.state)
+
+    def __unicode__(self):
+        return u"{0} in {1}, {2}".format(
+            self.name,
+            self.city,
+            self.state)

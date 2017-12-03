@@ -1,1 +1,1 @@
-DB_LOCATION = 'db.json'
+DB_LOCATION='db.json'
